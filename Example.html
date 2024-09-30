@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subhalaxmi bisoyi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: white;
+        }
+
+        /* Header and Navigation */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #5E2CA5;
+            padding: 20px;
+            color: white;
+        }
+
+        .header-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header .name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .header .contact-info {
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .nav {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav li {
+            display: inline;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: normal;
+            font-size: 18px;
+        }
+
+        .nav a:hover {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* Container */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Introduction / About Me */
+        .intro {
+            text-align: left;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .intro img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .intro h2 {
+            font-size: 2.5rem;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+        }
+
+        /* Skills Section */
+        .skills, .projects, .recommendations {
+            margin-bottom: 40px;
+        }
+
+        h3 {
+            font-size: 2rem;
+            color: #5E2CA5;
+            margin-bottom: 20px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .skill {
+            background-color: #F3F3F3;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            text-align: center;
+            width: 28%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill img {
+            width: 50px;
+            height: 50px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .skill h4 {
+            margin: 10px 0;
+        }
+
+        /* Project Section */
+        .projects-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .project {
+            background-color: #F3F3F3;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            text-align: center;
+            width: 28%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .project h4 {
+            margin: 10px 0;
+        }
+
+        /* Recommendations */
+        .recommendation-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .recommendation {
+            background-color: #F3F3F3;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            text-align: center;
+            width: 28%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .recommendation p {
+            font-style: italic;
+        }
+
+        /* Recommendation Form */
+        .recommendation-form input, .recommendation-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .recommendation-form button {
+            background-color: #5E2CA5;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .recommendation-form button:hover {
+            background-color: #4A2185;
+        }
+
+        /* Home Icon */
+        .home-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #5E2CA5;
+            padding: 10px;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        /* Popup Confirmation */
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 30%;
+            transform: translate(-50%, -30%);
+            background-color: rgb(255, 105, 180);
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .popup.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <div class="name">Subhalaxmi bisoyi</div>
+            <div class="contact-info">📧  Subhalaxmi.bisoyi014229@rec.ac.in | 📞 +91 8249498969</div>
+        </div>
+        <ul class="nav">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Project Details</a></li>
+            <li><a href="#recommendations">Recommendations</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <!-- About Me Section -->
+        <section id="about" class="intro">
+            <img src="https://miro.medium.com/max/1400/1*qdAW1TjCN57h1lbuuzvchg.gif" alt="Subhalaxmi bisoyi's Profile Picture">
+            <div>
+                <h2>Hi, I'm Subhalaxmi bisoyi! 👋</h2>
+                <p>Hi, I'm Subhalaxmi bisoyi, a 2nd-year Computer Science student. I'm passionate about web development because it offers a blend of creativity and technical skills. The ability to build and design interactive websites and applications fascinates me. I enjoy the challenge of solving problems and the satisfaction of seeing my work come to life on the web. Plus, web development is constantly evolving, which means there's always something new to learn and explore.</p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h3>Skills</h3>
+            <div class="skills-list">
+                <div class="skill">
+                    <img src="html.png" alt="HTML Logo">
+                    <h4>HTML</h4>
+                    <p>2 years experience</p>
+                </div>
+                <div class="skill">
+                    <img src="javascript.png" alt="JavaScript Logo">
+                    <h4>JavaScript</h4>
+                    <p>1.5 years experience</p>
+                </div>
+                
+                <div class="skill">
+                    <img src="java.png" alt="Java Logo">
+                    <h4>Java</h4>
+                    <p>1.5 years experience</p>
+                </div>
+                <div class="skill">
+                    <img src="react.webp" alt="react Logo">
+                    <h4>React</h4>
+                    <p>1 year experience</p>
+                </div>
+                <div class="skill">
+                    <img src="node.png" alt="Node Logo">
+                    <h4>Node.js</h4>
+                    <p>0.5 year experience</p>
+                </div>
+                <div class="skill">
+                    <img src="css (2).png" alt="css Logo">
+                    <h4>css</h4>
+                    <p>2 year experience</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h3>Project Details</h3>
+            <div class="projects-list">
+                <div class="project">
+                    <h4>E-Commerce Platform</h4>
+                    <p>Developed a full-stack e-commerce web application with user authentication, product search, and a payment gateway. Includes an admin dashboard for managing products, orders, and customers.</p>
+                    <p>Features: User authentication, shopping cart, secure payment, admin panel for inventory.</p>
+                    <p>Outcome: Seamless shopping experience and real-time inventory tracking.</p>
+                    <p>Tech Stack: React.js, Node.js,Stripe API.</p>
+                </div>
+                <div class="project">
+                    <h4>Chatbot Application</h4>
+                    <p>Created an AI-powered chatbot for customer service using NLP to handle queries related to products, orders, and FAQs.</p>
+                    <p>Features: Conversational AI, real-time query handling, database integration for order tracking.</p>
+                    <p>Outcome: Improved customer interaction through automated support.</p>
+                    <p>Tech Stack: Python, NLP, MySQL.</p>
+                </div>
+                <div class="project">
+                    <h4>Fashion Store Website</h4>
+                    <p> Designed a fashion store website with a product gallery, shopping cart, user authentication, and reviews system.</p>
+                    <p>Features: Product filtering, user dashboard, order tracking, and reviews.</p>
+                    <p>Outcome: Delivered a responsive, user-friendly platform for online shopping.</p>
+                    <p>Tech Stack: HTML, CSS, JavaScript, PHP/MySQL.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendations Section -->
+        <section id="recommendations">
+            <h3>Recommendations</h3>
+            <div class="recommendation-list">
+                <div class="recommendation">
+                    <p>"Subhalaxmi bisoyi is very diligent in his work, always delivering on time. I highly recommend her for any project.Her dedication and problem-solving skills were evident in the successful completion of our e-commerce project."
+
+                    </p>
+                </div>
+                <div class="recommendation">
+                    <p>"Subhalaxmi bisoyi's expertise in full stack development is exceptional. she is a great team player and problem solver."Sonali's ability to build and deploy a fully functional chatbot from scratch was impressive. Her attention to detail and passion for coding make him a great asset to any team."
+</p>
+                </div>
+                <div class="recommendation">
+                    <p>"Working with Subhalaxmi bisoyi has been an absolute pleasure. she is detail-oriented and always exceeds expectations."I was thoroughly impressed by Sonali's web development skills. she consistently delivered high-quality code and played a crucial role in bringing our fashion store website to life."
+                        </p>
+                </div>
+                <div class="recommendation">
+                    <p>Subhalaxmi bisoyi is a great person to work with .she is very knowledgeable to front-end development.</p>
+                    </div>
+            </div>
+
+            <div class="recommendation-form">
+                <h4>Leave a Recommendation</h4>
+                <input type="text" id="name" placeholder="Name (Optional)">
+                <textarea id="message" rows="4" placeholder="Message"></textarea>
+                <button onclick="submitRecommendation()">Submit</button>
+            </div>
+
+            <!-- Popup Confirmation -->
+            <div id="popup" class="popup">
+                <p>✅</p>
+                <p>Thank you for leaving a recommendation!</p>
+                <button onclick="closePopup()">OK</button>
+            </div>
+        </section>
+
+        <!-- Home Icon -->
+        <div class="home-icon">
+            <a href="#about">🏠</a>
+        </div>
+    <script>
+        function submitRecommendation() {
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+            
+            if (message) {
+                const newRec = document.createElement('div');
+                newRec.classList.add('recommendation');
+                newRec.innerHTML = `<p>${message}</p>`;
+                document.querySelector('.recommendation-list').appendChild(newRec);
+                document.getElementById('popup').classList.add('active');
+            }
+        }
+
+        function closePopup() {
+            document.getElementById('popup').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
